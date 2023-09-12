@@ -1,5 +1,19 @@
 #!/usr/bin/env ruby
 
+###
+# rom is simple command line bookmark system for Chrome on macos
+#
+# It can be configured using the ~/.romrc json file. Example
+#
+# ~/.romrc file:
+# {
+#   "email": "https://gmail.com"
+# }
+#
+# Usage:
+# rom email #=> Opens https://gmail.com in your browser
+###
+
 require 'json'
 
 config = JSON.parse(File.read('/Users/whunt/.romrc'))
