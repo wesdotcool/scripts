@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+config = JSON.parse(File.read('/Users/whunt/.romrc'))
+website = config[ARGV[0]]
+if !website.nil?
+  cmd = <<-CMD
+    open -a "Google Chrome" #{website}
+  CMD
+  `#{cmd}`
+else
+  puts "Not recognized #{ARGV[1]}"
+end
